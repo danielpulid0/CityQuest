@@ -156,7 +156,7 @@
         /* --- Dashboard Section --- */
         .dashboard-section {
             padding: 5rem 5%;
-            max-width: 1200px;
+            max-width: 1440px;
             margin: 0 auto;
         }
 
@@ -187,6 +187,24 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
             border-left: 5px solid var(--accent-teal);
             transition: transform 0.3s ease;
+        }
+
+        @media (min-width: 1024px) {
+            html {
+                font-size: 112.5%;
+            }
+
+            .hardware-banner {
+                max-width: 1000px;
+            }
+
+            .pricing-grid {
+                max-width: 1100px;
+            }
+
+            .metrics-grid{
+                grid-template-columns: repeat(4, 25%);
+            }
         }
 
         .metric-card:hover {
@@ -359,6 +377,7 @@
         }
 
         /* --- Footer --- */
+   
         footer {
             background-color: var(--primary-dark);
             color: var(--text-light);
@@ -389,6 +408,222 @@
             .hero h1 {
                 font-size: 2.5rem;
             }
+            .checkout-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* --- Páginas de Contratación / Checkout (Vistas Secundarias) --- */
+        .plan-page {
+            min-height: 100vh;
+            padding: 7rem 5% 4rem;
+            background-color: var(--bg-light);
+        }
+
+        .plan-page-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            background-color: #e2e8f0;
+            transition: background-color 0.2s ease;
+        }
+
+        .back-link:hover {
+            background-color: #cbd5e1;
+        }
+
+        .checkout-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        .summary-box {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+            border-top: 6px solid var(--accent-teal);
+        }
+
+        .summary-box.pro-theme {
+            background-color: var(--secondary-dark);
+            color: var(--text-light);
+            border-top: 6px solid var(--accent-teal);
+        }
+
+        .plan-badge {
+            display: inline-block;
+            padding: 0.35rem 0.9rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+            background-color: rgba(91, 192, 190, 0.2);
+            color: var(--primary-dark);
+        }
+
+        .summary-box.pro-theme .plan-badge {
+            background-color: var(--accent-teal);
+            color: var(--primary-dark);
+        }
+
+        .breakdown-list {
+            margin: 1.5rem 0;
+            padding: 1.2rem 0;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .summary-box.pro-theme .breakdown-list {
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .breakdown-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .breakdown-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.35rem;
+            font-weight: 800;
+            margin-top: 1rem;
+            padding-top: 0.8rem;
+            border-top: 2px dashed #cbd5e1;
+        }
+
+        .summary-box.pro-theme .breakdown-total {
+            border-color: rgba(255, 255, 255, 0.25);
+            color: var(--accent-teal);
+        }
+
+        .form-box {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .form-box h2 {
+            font-size: 1.75rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-box p {
+            color: var(--gray-text);
+            margin-bottom: 1.8rem;
+            font-size: 0.95rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.4rem;
+            color: var(--primary-dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 10px;
+            font-size: 1rem;
+            color: var(--text-dark);
+            background-color: #ffffff;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-teal);
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 10px;
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            margin-top: 0.5rem;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--secondary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-submit.teal {
+            background-color: var(--accent-teal);
+            color: var(--primary-dark);
+        }
+
+        .btn-submit.teal:hover {
+            background-color: #4eb0ae;
+        }
+
+        .confirmation-card {
+            display: none;
+            background-color: #ecfdf5;
+            border: 2px solid var(--success);
+            border-radius: 12px;
+            padding: 1.8rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .confirmation-card h3 {
+            color: #065f46;
+            font-size: 1.35rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .confirmation-card p {
+            color: #047857;
+            margin-bottom: 1.2rem;
+        }
+
+        .whatsapp-btn {
+            display: inline-block;
+            background-color: #25d366;
+            color: #ffffff;
+            padding: 0.85rem 1.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: opacity 0.2s ease;
+        }
+
+        .whatsapp-btn:hover {
+            opacity: 0.9;
         }
     </style>
 </head>
@@ -396,10 +631,12 @@
 
     <!-- Navegación -->
     <nav>
-        <a href="#" class="logo">CityQuest</a>
-        <a href="#planes" class="nav-cta">Ver Planes</a>
+        <a href="#" class="logo" onclick="navigateTo('home', event)">CityQuest</a>
+        <a href="#planes" id="nav-action-btn" class="nav-cta" onclick="navigateTo('home', event, 'planes')">Ver Planes</a>
     </nav>
 
+    <!-- VISTA PRINCIPAL: Catálogo Comercial -->
+    <main id="view-home">
     <!-- Sección Hero (El Gancho) -->
     <section class="hero">
         <h1>Convierte cada visita física<br>en una <span>experiencia digital</span></h1>
@@ -468,7 +705,7 @@
                     <li class="disabled">Analítica avanzada de retención</li>
                     <li class="disabled">Participación en rutas turísticas</li>
                 </ul>
-                <a href="#" class="btn btn-outline">Seleccionar Básico</a>
+                <a href="#plan-basico" class="btn btn-outline" onclick="navigateTo('basico', event)">Seleccionar Básico</a>
             </div>
 
             <!-- Plan Profesional -->
@@ -482,7 +719,183 @@
                     <li>Analítica avanzada de retención</li>
                     <li>Participación en rutas turísticas</li>
                 </ul>
-                <a href="#" class="btn btn-solid">Empezar Ahora</a>
+                <a href="#plan-profesional" class="btn btn-solid" onclick="navigateTo('profesional', event)">Empezar Ahora</a>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- PÁGINA 1: Conexión con botón "Seleccionar Básico" -->
+    <section id="view-basico" class="plan-page" style="display: none;">
+        <div class="plan-page-container">
+            <a href="#" class="back-link" onclick="navigateTo('home', event)">&larr; Volver al catálogo principal</a>
+
+            <div class="checkout-grid">
+                <!-- Resumen del Plan Básico -->
+                <div class="summary-box">
+                    <span class="plan-badge">Plan Básico &bull; PyME Local</span>
+                    <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">CityQuest Básico</h2>
+                    <p style="color: var(--gray-text); font-size: 0.95rem;">Ideal para cafeterías, restaurantes y comercios que buscan digitalizar su programa de lealtad.</p>
+
+                    <div class="breakdown-list">
+                        <div class="breakdown-item">
+                            <span>Suscripción mensual</span>
+                            <strong>$499 MXN / mes</strong>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Kit CityQuest (Acrílico NFC + QR)</span>
+                            <strong>$890 MXN (único)</strong>
+                        </div>
+                        <div class="breakdown-item" style="color: var(--success);">
+                            <span>Instalación y capacitación en Tijuana</span>
+                            <strong>Incluido</strong>
+                        </div>
+                        <div class="breakdown-total">
+                            <span>Inversión Inicial</span>
+                            <span>$1,389 MXN</span>
+                        </div>
+                    </div>
+
+                    <ul class="features-list" style="margin-bottom: 0;">
+                        <li>Registro de visitas ilimitadas con NFC/QR</li>
+                        <li>Sistema de recompensas básicas</li>
+                        <li>Dashboard de analítica general</li>
+                    </ul>
+                </div>
+
+                <!-- Formulario de Registro Plan Básico -->
+                <div class="form-box">
+                    <h2>Activa tu Plan Básico</h2>
+                    <p>Completa los datos de tu establecimiento en Tijuana para programar la entrega e instalación de tu Kit NFC.</p>
+
+                    <form id="form-basico" onsubmit="handlePlanSubmit(event, 'Básico ($499/mes)')">
+                        <div class="form-group">
+                            <label for="basico-negocio">Nombre del establecimiento</label>
+                            <input type="text" id="basico-negocio" class="form-control" placeholder="Ej. Café de la Flor" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="basico-giro">Giro del negocio</label>
+                            <select id="basico-giro" class="form-control" required>
+                                <option value="">Selecciona una opción...</option>
+                                <option value="Cafetería">Cafetería / Repostería</option>
+                                <option value="Restaurante">Restaurante</option>
+                                <option value="Bar / Cervecería">Bar / Cervecería artesanal</option>
+                                <option value="Museo / Galería">Museo / Espacio cultural</option>
+                                <option value="Comercio local">Otro comercio local</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="basico-zona">Zona o colonia en Tijuana</label>
+                            <input type="text" id="basico-zona" class="form-control" placeholder="Ej. Zona Río, Playas, Centro, Otay..." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="basico-contacto">Nombre del encargado o dueño</label>
+                            <input type="text" id="basico-contacto" class="form-control" placeholder="Tu nombre completo" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="basico-telefono">Teléfono / WhatsApp de contacto</label>
+                            <input type="tel" id="basico-telefono" class="form-control" placeholder="664 000 0000" required>
+                        </div>
+
+                        <button type="submit" class="btn-submit">Solicitar Plan Básico e Instalación</button>
+                    </form>
+
+                    <div id="confirm-basico" class="confirmation-card">
+                        <h3>¡Solicitud registrada con éxito!</h3>
+                        <p id="confirm-basico-msg"></p>
+                        <a id="wa-basico-link" href="#" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">Confirmar por WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PÁGINA 2: Conexión con botón "Empezar Ahora" (Plan Profesional) -->
+    <section id="view-profesional" class="plan-page" style="display: none;">
+        <div class="plan-page-container">
+            <a href="#" class="back-link" onclick="navigateTo('home', event)">&larr; Volver al catálogo principal</a>
+
+            <div class="checkout-grid">
+                <!-- Resumen del Plan Profesional -->
+                <div class="summary-box pro-theme">
+                    <span class="plan-badge">Plan Profesional &bull; Recomendado</span>
+                    <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">CityQuest Profesional</h2>
+                    <p style="color: #cbd5e1; font-size: 0.95rem;">Maximiza la atracción de turistas y residentes integrando tu negocio en las rutas oficiales de Tijuana.</p>
+
+                    <div class="breakdown-list">
+                        <div class="breakdown-item">
+                            <span>Suscripción mensual</span>
+                            <strong>$999 MXN / mes</strong>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>Kit CityQuest (Acrílico NFC + QR)</span>
+                            <strong>$890 MXN (único)</strong>
+                        </div>
+                        <div class="breakdown-item" style="color: var(--accent-teal);">
+                            <span>Alta prioritaria en rutas turísticas</span>
+                            <strong>Incluido</strong>
+                        </div>
+                        <div class="breakdown-total">
+                            <span>Inversión Inicial</span>
+                            <span>$1,889 MXN</span>
+                        </div>
+                    </div>
+
+                    <ul class="features-list" style="margin-bottom: 0;">
+                        <li>Todo lo incluido en el Plan Básico</li>
+                        <li>Analítica avanzada de retención y horarios pico</li>
+                        <li>Participación destacada en rutas gastronómicas y culturales</li>
+                        <li>Campañas de recompensas multinivel</li>
+                    </ul>
+                </div>
+
+                <!-- Formulario de Registro / Demo Plan Profesional -->
+                <div class="form-box">
+                    <h2>Empieza Ahora con CityQuest</h2>
+                    <p>Agenda una demostración en vivo en tu local o inicia directamente tu incorporación al Plan Profesional.</p>
+
+                    <form id="form-profesional" onsubmit="handlePlanSubmit(event, 'Profesional ($999/mes)')">
+                        <div class="form-group">
+                            <label for="pro-modalidad">¿Cómo deseas comenzar?</label>
+                            <select id="pro-modalidad" class="form-control" required>
+                                <option value="Contratación directa + Instalación de Kit">Contratación directa + Instalación de Kit NFC</option>
+                                <option value="Demostración gratuita en mi establecimiento">Agendar demostración gratuita de 15 min en mi local</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pro-negocio">Nombre del establecimiento</label>
+                            <input type="text" id="pro-negocio" class="form-control" placeholder="Ej. Restaurante Baja Cocina" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pro-zona">Zona o colonia en Tijuana</label>
+                            <input type="text" id="pro-zona" class="form-control" placeholder="Ej. Av. Revolución, Zona Río, Chapultepec..." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pro-contacto">Nombre del encargado o dueño</label>
+                            <input type="text" id="pro-contacto" class="form-control" placeholder="Tu nombre completo" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pro-telefono">Teléfono / WhatsApp de contacto</label>
+                            <input type="tel" id="pro-telefono" class="form-control" placeholder="664 000 0000" required>
+                        </div>
+
+                        <button type="submit" class="btn-submit teal">Continuar con Plan Profesional</button>
+                    </form>
+
+                    <div id="confirm-profesional" class="confirmation-card">
+                        <h3>¡Excelente decisión! Tu solicitud está lista</h3>
+                        <p id="confirm-profesional-msg"></p>
+                        <a id="wa-profesional-link" href="#" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">Enviar ficha por WhatsApp</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -503,5 +916,91 @@
         </div>
     </footer>
 
+    <script>
+        // Control de navegación entre el catálogo principal y las páginas de cada plan
+        function navigateTo(view, event, anchorId) {
+            if (event) event.preventDefault();
+
+            const homeView = document.getElementById('view-home');
+            const basicoView = document.getElementById('view-basico');
+            const proView = document.getElementById('view-profesional');
+            const navActionBtn = document.getElementById('nav-action-btn');
+
+            homeView.style.display = 'none';
+            basicoView.style.display = 'none';
+            proView.style.display = 'none';
+
+            if (view === 'basico') {
+                basicoView.style.display = 'block';
+                navActionBtn.textContent = 'Volver al Catálogo';
+                window.location.hash = 'plan-basico';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else if (view === 'profesional') {
+                proView.style.display = 'block';
+                navActionBtn.textContent = 'Volver al Catálogo';
+                window.location.hash = 'plan-profesional';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                homeView.style.display = 'block';
+                navActionBtn.textContent = 'Ver Planes';
+                if (anchorId) {
+                    history.replaceState(null, '', '#' + anchorId);
+                    const target = document.getElementById(anchorId);
+                    if (target) target.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    history.replaceState(null, '', window.location.pathname);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            }
+        }
+
+        // Sincronizar navegación con los botones Atrás/Adelante del navegador
+        function syncViewFromHash() {
+            const hash = window.location.hash;
+            if (hash === '#plan-basico') {
+                navigateTo('basico');
+            } else if (hash === '#plan-profesional') {
+                navigateTo('profesional');
+            } else {
+                navigateTo('home', null, hash === '#planes' ? 'planes' : null);
+            }
+        }
+
+        window.addEventListener('hashchange', syncViewFromHash);
+        window.addEventListener('DOMContentLoaded', syncViewFromHash);
+
+        // Procesar formularios sin alertas nativas y generar enlace directo a WhatsApp
+        function handlePlanSubmit(event, planName) {
+            event.preventDefault();
+            const isBasico = planName.includes('Básico');
+            const prefix = isBasico ? 'basico' : 'pro';
+
+            const negocio = document.getElementById(`${prefix}-negocio`).value.trim();
+            const zona = document.getElementById(`${prefix}-zona`).value.trim();
+            const contacto = document.getElementById(`${prefix}-contacto`).value.trim();
+            const telefono = document.getElementById(`${prefix}-telefono`).value.trim();
+            const extra = isBasico
+                ? `Giro: ${document.getElementById('basico-giro').value}`
+                : `Modalidad: ${document.getElementById('pro-modalidad').value}`;
+
+            const formEl = document.getElementById(isBasico ? 'form-basico' : 'form-profesional');
+            const confirmCard = document.getElementById(isBasico ? 'confirm-basico' : 'confirm-profesional');
+            const confirmMsg = document.getElementById(isBasico ? 'confirm-basico-msg' : 'confirm-profesional-msg');
+            const waLink = document.getElementById(isBasico ? 'wa-basico-link' : 'wa-profesional-link');
+
+            formEl.style.display = 'none';
+            confirmCard.style.display = 'block';
+            confirmMsg.textContent = `Gracias, ${contacto}. Hemos preparado la ficha de ${negocio} (${zona}) para el Plan ${planName}. Un asesor comercial de CityQuest Tijuana se comunicará al ${telefono}.`;
+
+            const mensajeWA = encodeURIComponent(
+                `Hola equipo CityQuest, me interesa el Plan ${planName}.\n` +
+                `• Negocio: ${negocio}\n` +
+                `• Zona: ${zona}\n` +
+                `• ${extra}\n` +
+                `• Contacto: ${contacto} (${telefono})`
+            );
+            waLink.href = `https://wa.me/526640000000?text=${mensajeWA}`;
+        }
+    </script>
 </body>
 </html>
