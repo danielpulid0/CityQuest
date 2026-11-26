@@ -11,7 +11,10 @@
     <!-- Navegación -->
     <nav>
         <a href="#" class="logo" onclick="navigateTo('home', event)">CityQuest</a>
-        <a href="#planes" id="nav-action-btn" class="nav-cta" onclick="navigateTo('home', event, 'planes')">Ver Planes</a>
+        <div class="nav-actions">
+            <a href="#preguntas" class="nav-link" onclick="navigateTo('home', event, 'preguntas')">Preguntas</a>
+            <a href="#planes" id="nav-action-btn" class="nav-cta" onclick="navigateTo('home', event, 'planes')">Ver Planes</a>
+        </div>
     </nav>
 
     <!-- VISTA PRINCIPAL: Catálogo Comercial -->
@@ -167,6 +170,46 @@
                     <li>Participación en rutas turísticas</li>
                 </ul>
                 <a href="#plan-profesional" class="btn btn-solid" onclick="navigateTo('profesional', event)">Empezar Ahora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Preguntas Frecuentes -->
+    <section id="preguntas" class="faq-section">
+        <div class="faq-container">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            <p class="section-subtitle">Resolvemos las dudas más comunes antes de activar CityQuest en tu establecimiento.</p>
+
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary class="faq-question">¿Mis clientes necesitan descargar una aplicación?</summary>
+                    <p class="faq-answer">No. Al acercar el teléfono a la etiqueta se abre el pasaporte digital en el navegador. También funciona escaneando el código QR.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">¿Funciona con cualquier celular?</summary>
+                    <p class="faq-answer">La lectura NFC funciona en la mayoría de los teléfonos Android recientes y en iPhone XS o posteriores. Para el resto, el acrílico incluye un código QR de respaldo.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">¿Qué recompensas puedo ofrecer?</summary>
+                    <p class="faq-answer">Las que el negocio elija; por ejemplo, una bebida de cortesía en la 5.ª visita, 10% de descuento al completar una ruta o un regalo de cumpleaños.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">¿Hay periodo de prueba?</summary>
+                    <p class="faq-answer">Sí. El primer mes del Plan Básico es sin costo; solo se paga el Kit CityQuest ($890 MXN).</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">¿Qué incluye la instalación?</summary>
+                    <p class="faq-answer">Acrílico de mesa con etiqueta NFC, código QR de respaldo, instalación presencial y capacitación al personal.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">¿Puedo cambiar de plan?</summary>
+                    <p class="faq-answer">Sí. Se puede pasar del Plan Básico al Profesional en cualquier momento; el contrato es anual con facturación mensual.</p>
+                </details>
             </div>
         </div>
     </section>
@@ -409,7 +452,8 @@
             } else if (hash === '#plan-profesional') {
                 navigateTo('profesional');
             } else {
-                navigateTo('home', null, hash === '#planes' ? 'planes' : null);
+                const anchor = (hash === '#planes' || hash === '#preguntas') ? hash.slice(1) : null;
+                navigateTo('home', null, anchor);
             }
         }
 
@@ -448,6 +492,17 @@
             );
             waLink.href = `https://wa.me/526640000000?text=${mensajeWA}`;
         }
+
+        // Comportamiento de acordeón: al abrir una pregunta, cerrar las demás
+        document.querySelectorAll('.faq-item').forEach((item) => {
+            item.addEventListener('toggle', () => {
+                if (item.open) {
+                    document.querySelectorAll('.faq-item').forEach((other) => {
+                        if (other !== item) other.open = false;
+                    });
+                }
+            });
+        });
     </script>
 </body>
 </html>
