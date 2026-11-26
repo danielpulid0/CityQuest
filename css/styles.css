@@ -364,6 +364,29 @@ nav {
     line-height: 1.5;
 }
 
+.reward-examples {
+    list-style: none;
+    margin-top: 0.75rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 0.5rem;
+}
+
+.reward-examples li {
+    font-size: 0.85rem;
+    color: #e2e8f0;
+    background: rgba(91, 192, 190, 0.12);
+    border: 1px solid rgba(91, 192, 190, 0.28);
+    border-radius: 8px;
+    padding: 0.45rem 0.7rem;
+}
+
+.reward-examples li::before {
+    content: '✓ ';
+    color: var(--accent-teal);
+    font-weight: 700;
+}
+
 .guide-media {
     display: flex;
     justify-content: center;
