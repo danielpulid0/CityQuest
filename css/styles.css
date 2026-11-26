@@ -478,6 +478,20 @@ nav {
     margin-bottom: 1rem;
 }
 
+.plan-promo-badge {
+    display: inline-block;
+    background-color: rgba(16, 185, 129, 0.14);
+    color: #047857;
+    border: 1px solid rgba(16, 185, 129, 0.45);
+    padding: 0.3rem 0.9rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-bottom: 0.85rem;
+}
+
 .pricing-card.premium .plan-name { color: var(--accent-teal); }
 
 .plan-price {
